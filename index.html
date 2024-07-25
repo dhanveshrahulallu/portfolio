@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Dhanvesh Rahul Allu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">My Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Front End Developer</p>
+            <h1>Hi, I'm <span>Dhanvesh Rahul Allu</span><br>from Visakhapatnam</h1>
+        </div>
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <h1 class="sub-title">About Me</h1>
+        <p>Hi, I'm Dhanvesh Rahul Allu, a third-year B.Tech student at SRM University AP, pursuing Computer Science Engineering. I'm passionate about software development, web technologies, and data science. I'm also an active member of the tennis club and an NSS volunteer, which has helped me develop leadership and teamwork skills.</p>
+
+        <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+            <ul>
+                <li><span>Programming Languages:</span> C, C++, Java, Python</li>
+                <li><span>Web Development:</span> HTML, CSS, JavaScript</li>
+            </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+            <p>No professional experience yet, as I am currently studying.</p>
+        </div>
+        <div class="tab-contents" id="education">
+            <ul>
+                <li><span>2022 - 2026:</span> B.Tech in Computer Science Engineering at SRM University AP</li>
+                <li><span>2020 - 2022:</span> Sri Chaitanya College</li>
+                <li><span>Up to Grade 10:</span> Delhi Public School</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ---------services---------------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fas fa-code"></i>
+                <h2>Front End Development</h2>
+                <p>I specialize in creating responsive and visually appealing web interfaces using the latest web technologies.</p>
+                <a href="#" class="btn">Learn more</a>
+            </div>
+            <div>
+                <i class="fas fa-crop-alt"></i>
+                <h2>Web Design</h2>
+                <p>I design user-friendly and aesthetically pleasing websites tailored to client specifications.</p>
+                <a href="#" class="btn">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------portfolio------------ -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png" alt="Election Voting System">
+                <div class="layer">
+                    <h3>Election Voting System</h3>
+                    <p>An election voting system securely collects, counts, and reports votes to determine the outcome of an election.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png" alt="Car Rental System">
+                <div class="layer">
+                    <h3>Car Rental System</h3>
+                    <p>A car rental system in C++ manages vehicle inventory, customer bookings, and rental transactions for efficient car hire operations.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png" alt="Mall Management System">
+                <div class="layer">
+                    <h3>Mall Management System</h3>
+                    <p>A mall management system in SQL organizes store data, tracks leases, manages facilities, and analyzes customer traffic to streamline mall operations.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> dhanveshrahul_allu@srmap.edu.in</p>
+                <p><i class="fas fa-phone-square-alt"></i> +91 9010354674</p>
+                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Dhanvesh Rahul Allu</p>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = '< add your own link here >'; 
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully";
+                setTimeout(function(){
+                    msg.innerHTML = "";
+                }, 5000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
+</body>
+</html>
